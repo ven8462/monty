@@ -16,6 +16,7 @@ int find_opc(stack_t **stack, char *instruction, char *value_str, int line_num)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
