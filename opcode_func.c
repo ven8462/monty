@@ -15,6 +15,7 @@ int find_opc(stack_t **stack, char *instruction, char *value_str, int line_num)
 	instruction_t op[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
