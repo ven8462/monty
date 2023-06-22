@@ -20,6 +20,7 @@ int find_opc(stack_t **stack, char *instruction, char *value_str, int line_num)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 
