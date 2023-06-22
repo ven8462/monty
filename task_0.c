@@ -1,6 +1,5 @@
 #include "monty.h"
 
-int value;
 
 /**
  * createNode - creates a new node
@@ -33,6 +32,7 @@ stack_t *createNode(int n)
 
 void push(stack_t **stack, unsigned int line_number)
 {
+	int value;
 	stack_t *new = NULL;
 	(void)line_number;
 
