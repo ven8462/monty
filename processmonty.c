@@ -44,6 +44,8 @@ void execute(char *montyfile)
 	size_t buffer_size = 0;
 	stack_t *stack = NULL;
 
+	cmd.fd = fopen(montyfile, "r");
+
 	if (cmd.fd)
 	{
 		while (getline(&cmd.line, &buffer_size, cmd.fd) != -1)
