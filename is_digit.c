@@ -8,10 +8,12 @@
 */
 int is_digit(const char *str)
 {
+	int i;
+
 	if (str[0] == '-')
 	str++; /* Skip the negative sign if present */
 
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (!isdigit(str[i]))
 		{

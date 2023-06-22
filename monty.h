@@ -1,14 +1,29 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-
+#define _GNU_SOURCE
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
-extern char *number;
+extern int info;
+
+/**
+ * struct cmd_s - cmd
+ * @fd: file descriptor
+ * @line: line
+ */
+
+typedef struct cmd_s
+{
+	FILE *fd;
+	char *line;
+} cmd_t;
+
+/*extern cmd_t cmd;*/
+extern int value;
 
 
 
@@ -43,13 +58,31 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void process_file(FILE *file, stack_t **stack);
-void execute_opcode(char *opcode, char *arg, stack_t *    *stack);
-void monty_error(const char *message);
-void free_stack(stack_t *stack);
+void process_line(stack_t **stack, char *line, int current_line);
+void execute(char *montyfile);
+int find_opc(stack_t **stack, char *instruction, char *value_str, int line_num);
+void usage_error(void);
+void open_error(char *file);
+void push_error(FILE *fd, char *buf, stack_t *stack, int line_number);
+void unknown_ins(FILE *fd, char *buf, stack_t *stack, char *val, int line_num);
 int is_digit(const char *str);
-void _push(stack_t **stack, unsigned int line_number);
-void _pall(stack_t **stack, unsigned int line_number);
+
+stack_t *createNode(int n);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t *stack);
+void clean_stack(stack_t **stack);
+
+
+
+
+
+
+
+
+
+
+
 
 
 #endif

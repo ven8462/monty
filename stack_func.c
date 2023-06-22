@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
 * _push - pushes an element to the stack
 * @stack: pointer to first node in stack

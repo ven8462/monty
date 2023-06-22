@@ -1,14 +1,5 @@
 #include "monty.h"
 
-/**
-* monty_error - Print an error message and exit the program.
-* @message: The error message to print.
-*/
-void monty_error(const char *message)
-{
-	fprintf(stderr, "%s\n", message);
-	exit(EXIT_FAILURE);
-}
 
 /**
 * free_stack - Free the memory used by the stack.
@@ -24,4 +15,25 @@ void free_stack(stack_t *stack)
 		free(stack);
 		stack = temp;
 	}
+}
+
+/**
+ * clean_stack - Free all and close files
+ * @stack: Stack
+ */
+
+void clean_stack(stack_t **stack)
+{
+	cmd_t cmd = {NULL, NULL};
+
+	stack_t *temp = *stack;
+
+	while (temp)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
+	fclose(cmd.fd);
+	free(cmd.line);
 }
