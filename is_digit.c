@@ -11,7 +11,7 @@ int is_digit(const char *str)
 	int i;
 
 	if (str[0] == '-')
-	str++; /* Skip the negative sign if present */
+		str++; /* Skip the negative sign if present */
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
