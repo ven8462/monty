@@ -17,10 +17,6 @@
 - div - divides the second top element of the stack by the top element of the stack
 - mul - multiplies the second top element of the stack with the top element of the stack
 - mod - computes the rest of the division of the second top element of the stack by the top element of the stack
-<<<<<<< HEAD
 - '#' - When the first non-space character of a line is '#', treat this line as a comment
-=======
-- '#' - When the first non-space character of a line is #, treat this line as a comment
->>>>>>> d97a5e9a9cf1633d4dea04bce0cfa2fda28f1434
 - pchar - prints the char at the top of the stack, followed by a new line
 
